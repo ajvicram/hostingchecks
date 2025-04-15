@@ -1,71 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tribute to Seenu</title>
+  <meta charset="UTF-8">
+  <title>My Friends</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      animation: backgroundCycle 15s infinite;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #000000, #1e1b4b, #3b0764);
-      color: white;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      background-size: 400% 400%;
-      animation: gradientFlow 15s ease infinite;
     }
 
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(138, 43, 226, 0.7);
-      max-width: 500px;
-    }
-
-    .photo {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid violet;
-      box-shadow: 0 0 20px #9400D3;
-      margin-bottom: 20px;
+    @keyframes backgroundCycle {
+      0% { background-color: #f6d365; }
+      25% { background-color: #fda085; }
+      50% { background-color: #fbc2eb; }
+      75% { background-color: #a1c4fd; }
+      100% { background-color: #f6d365; }
     }
 
     h1 {
-      margin-bottom: 10px;
-      font-size: 2.2em;
-      color: #F8F8FF;
+      margin-top: 20px;
     }
 
-    p {
-      font-size: 1.2em;
-      color: #ddd;
-      line-height: 1.6;
+    .friend {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px;
+      border-radius: 15px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .friend:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+      animation: sprinkle 1s infinite;
+    }
+
+    @keyframes sprinkle {
+      0%, 100% { box-shadow: 0 0 10px #fff; }
+      50% { box-shadow: 0 0 30px #ff69b4; }
+    }
+
+    .friend img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .friend h2 {
+      margin: 10px 0 5px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="seenu.png" alt="Photo of Seenu" class="photo" />
-    <h1>adsadsas</h1>
-    <p>
-      He is my best dude.<br>
-      I’m really going to miss him...<br>
-      and I’ll never forget him.
-    </p>
+  <h1>Meet My Amazing Friends 👫</h1>
+  <div class="friend" onclick="location.href='friend1.html'">
+    <img src="friend1.jpg" alt="Friend 1">
+    <h2>Alice</h2>
+    <p>Always supportive, cheerful, and curious about life.</p>
+  </div>
+  <div class="friend" onclick="location.href='friend2.html'">
+    <img src="friend2.jpg" alt="Friend 2">
+    <h2>Bob</h2>
+    <p>Logical, funny, and the best problem-solver in our group.</p>
+  </div>
+  <div class="friend" onclick="location.href='friend3.html'">
+    <img src="friend3.jpg" alt="Friend 3">
+    <h2>Charlie</h2>
+    <p>Quiet but deep thinker, always there when needed.</p>
   </div>
 </body>
 </html>
